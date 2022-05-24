@@ -1,0 +1,10 @@
+version: '3.7'
+
+services:
+
+  test:
+    image: hrnciarik/panther-php-symfony
+    environment:
+      - PANTHER_EXTERNAL_BASE_URI=https://aroha.sk/
+    volumes:
+      - ./tests:/var/www/html/tests

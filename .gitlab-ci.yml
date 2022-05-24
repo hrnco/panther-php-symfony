@@ -1,0 +1,14 @@
+testing:
+  image: docker:latest
+  stage: build
+  tags:
+    - umd-preprod
+  services:
+    - docker:dind
+  before_script:
+    - echo $DOCKER_HUB_PASSWORD | docker login --username $DOCKER_HUB_USER --password-stdin
+  script:
+    - cd .docker && docker build --no-cache -t hrnciarik/panther-php-symfony .
+    - docker push hrnciarik/panther-php-symfony:latest
+  only:
+    - master
