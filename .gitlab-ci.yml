@@ -1,8 +1,6 @@
 testing:
   image: docker:latest
   stage: build
-  tags:
-    - umd-preprod
   services:
     - docker:dind
   before_script:
