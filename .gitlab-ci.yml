@@ -1,4 +1,4 @@
-testing:
+docker_hub:
   image: docker:latest
   stage: build
   services:
@@ -6,8 +6,15 @@ testing:
   before_script:
     - echo $DOCKER_HUB_PASSWORD | docker login --username $DOCKER_HUB_USER --password-stdin
   script:
-    - git push https://$GITHUB_TOKEN@github.com/hrnco/panther-php-symfony.git
     - cd .docker && docker build --no-cache -t hrnciarik/panther-php-symfony .
     - docker push hrnciarik/panther-php-symfony:latest
+  only:
+    - master
+
+github:
+  image: ruby:3.2
+  stage: push
+  script:
+    - git push https://$GITHUB_TOKEN@github.com/hrnco/panther-php-symfony.git
   only:
     - master
