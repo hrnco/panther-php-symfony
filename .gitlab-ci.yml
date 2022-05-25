@@ -1,5 +1,5 @@
 docker_hub:
-  image: docker:latest
+  image: docker:19-dind
   stage: build
   services:
     - docker:dind
