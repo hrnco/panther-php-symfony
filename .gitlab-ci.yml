@@ -15,7 +15,6 @@ github:
   image: ruby:2.7
   stage: build
   script:
-    - git branch $CI_COMMIT_BRANCH
-    - git push https://$GITHUB_TOKEN@github.com/hrnco/panther-php-symfony.git
+    - git push https://$GITHUB_TOKEN@github.com/hrnco/panther-php-symfony.git HEAD:$CI_COMMIT_BRANCH
   only:
     - master
