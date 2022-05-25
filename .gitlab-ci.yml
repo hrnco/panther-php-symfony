@@ -12,8 +12,8 @@ docker_hub:
     - master
 
 github:
-  image: ruby:3.2
-  stage: push
+  image: ruby:2.7
+  stage: build
   script:
     - git push https://$GITHUB_TOKEN@github.com/hrnco/panther-php-symfony.git
   only:
