@@ -2,10 +2,10 @@
 
 namespace App\Tests;
 
-use App\Panther\UniversalTestCase;
+use App\Panther\ArohaTestCase;
 
 
-class ArohaTest extends UniversalTestCase
+class ArohaTest extends ArohaTestCase
 {
     public function testSomething(): void
     {
