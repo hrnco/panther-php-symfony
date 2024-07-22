@@ -1,0 +1,9 @@
+services:
+
+  dev:
+    build: .
+    environment:
+      - PANTHER_EXTERNAL_BASE_URI=https://aroha.sk/
+    volumes:
+      - ./:/var/www/html
+    command: tail -F anything
