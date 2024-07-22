@@ -6,4 +6,5 @@ services:
       - PANTHER_EXTERNAL_BASE_URI=https://aroha.sk/
     volumes:
       - ./:/var/www/html
+      - ../:/var/www/all
     command: tail -F anything
