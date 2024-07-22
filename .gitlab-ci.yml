@@ -4,7 +4,8 @@ docker_hub:
   services:
     - docker:dind
   before_script:
-    - echo $DOCKER_HUB_PASSWORD | docker login --username $DOCKER_HUB_USER --password-stdin
+    # - echo $DOCKER_HUB_PASSWORD | docker login --username $DOCKER_HUB_USER --password-stdin
+    - docker login -u $DOCKER_HUB_USER -p $DOCKER_HUB_PASSWORD
   script:
     - cd .docker && docker build -t hrnciarik/panther-php-symfony .
     # - cd .docker && docker build --no-cache -t hrnciarik/panther-php-symfony .
