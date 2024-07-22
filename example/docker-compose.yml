@@ -1,5 +1,3 @@
-version: '3.7'
-
 services:
 
   test:
@@ -8,3 +6,4 @@ services:
       - PANTHER_EXTERNAL_BASE_URI=https://aroha.sk/
     volumes:
       - ./tests:/var/www/html/tests
+      - ./screenshots:/var/www/html/screenshots

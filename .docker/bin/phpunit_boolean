@@ -1,4 +1,0 @@
-#!/usr/bin/env php
-<?php
-$d = exec('./bin/phpunit', $output, $code);
-echo $code == 0 ? '1' : '0';

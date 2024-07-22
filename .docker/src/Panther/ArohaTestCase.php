@@ -24,12 +24,26 @@ abstract class ArohaTestCase extends PantherTestCase
         return false;
     }
 
+    public function log($msg = null)
+    {
+        if ($_ENV['APP_DEBUG'] != '1' || !$msg) {
+            return;
+        }
+        ob_end_clean();
+        echo $msg;
+        echo "\n";
+        ob_start();
+    }
+
     public function takeScreenshot($filename)
     {
+
+        $filename = './screenshots/'.$filename;
         if ($this->isDisabledScreenshot()) {
             return;
         }
-        $this->getBrowserClient()->takeScreenshot('./screenshots/'.$filename);
+        $this->getBrowserClient()->takeScreenshot($filename);
+        $this->log('created screenshot to file '.$filename);
     }
 
 }

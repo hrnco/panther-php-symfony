@@ -1,11 +1,8 @@
-# Testovacie Prostredie
+# Testing
 
-## Spustenie testov
+## Run tests
 
 ```
-# spusti testy
-docker-compose run test ./bin/phpunit
-
-# spusti testy pre zabbix
-docker-compose run test ./bin/phpunit_boolean
+# run tests
+docker compose run test ./bin/phpunit --debug -v --testdox
 ```
